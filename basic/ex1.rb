@@ -1,20 +1,25 @@
-def chu_nhat(a, b)
-  loop do
-    if ( a <= 0) || ( b <= 0)
-      puts "moi nhap lai chieu dai chieu rong > 0"
-      puts "chieu dai"
-      a = gets.chomp.to_f
-      puts "chieu rong"
-      b = gets.chomp.to_f
-    end
-    if (a > 0) && (b > 0)
-      break
-    end
-  end
-  chuvi = ( a + b ) * 2
-  dien_tich = a * b
-  puts " chu vi hinh chu nhat la: #{chuvi} "
-  puts " dien tich hinh chu nhat la: #{dien_tich}"
+def chu_vi(a, b)
+	2 * (a + b)
 end
 
-chu_nhat(2, 3)
+def dien_tich(a, b)
+	a * b
+end
+
+def nhap_canh(ten)
+  	c = 0
+ 	begin
+ 		print "Nhap canh #{ten}: "
+ 		c = gets.chomp.to_f
+	end until c > 0
+
+  	c
+end
+
+a = nhap_canh('a')
+b = nhap_canh('b')
+cv = chu_vi(a, b)
+dt = dien_tich(a, b)
+
+puts "Chu vi: #{cv}"
+puts "Dien tich: #{dt}"
