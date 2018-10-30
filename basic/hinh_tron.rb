@@ -1,16 +1,22 @@
-def hinh_tron(a)
-  loop do
-    if a <= 0
-      puts "moi nhap lai ban kinh hinh tron > 0"
-      puts "ban kinh ="
-      a = gets.chomp.to_f
-    end
-    if a > 0
-      break
-    end
+def nhap_bk()
+  bk = 0
+  while bk <= 0 do
+  	puts "Nhap ban kinh hinh tron"
+  	bk = gets.chomp.to_f
   end
-  chu_vi = a * 2 * 3.14
-  dien_tich = a * a * 3.14
-  puts "Chu vi hinh tron la: #{chu_vi}"
-  puts "Dien tich hinh tron la : #{dien_tich}"
+  bk
 end
+
+def dt_hinh_tron(bk)
+  bk * bk *3.14  
+end
+
+def cv_hinh_tron(bk)
+  bk * 2 * 3.14
+end
+
+a = nhap_bk
+dt = dt_hinh_tron(a)
+cv = cv_hinh_tron(a)
+puts "Chu vi hinh tron co ban kinh #{a} la: #{cv}"
+puts "Dien tich hinh tron co ban kinh #{a} la: #{dt}"

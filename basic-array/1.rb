@@ -1,15 +1,27 @@
-a = Array.new
-for i in 0..99
-  puts "Nhap phan tu thu #{i}"
-  a[i] = gets.chomp.to_i
-  break if a[i] == -1
+def nhap_mang(ten)
+	puts "Nhap mang #{ten}"
+	a = Array.new
+	for i in 0..99
+	  print "#{ten}\[#{i}\] = "
+	  a[i] = gets.chomp.to_i
+	  break if a[i] == -1
+	end
+	a
 end
-puts "Mang vua nhap:"
-a.each do |f|
-  print "#{f} "
+
+def in_mang(a)
+	puts "Cac phan tu cua mang la: "
+	a.each {|f| print "#{f} "}
 end
-min = a[0]
-for i in 0..(a.length - 1)
-  imin = a[i] if min > a[i]
+
+def min_mang(a)
+	min_mang = a[0]
+	for i in 1..(a.length - 1)
+		min_mang = a[i] if a[i] <= min_mang
+	end
+	min_mang
 end
-puts "gia tri nho nhat cua mang la #{min}"
+
+a = nhap_mang("a")
+in_mang(a)
+puts "Gia tri nho nhat trong mang la: #{min_mang(a)}"

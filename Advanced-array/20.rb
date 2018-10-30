@@ -1,7 +1,8 @@
-puts "nhap vao x"
-x = gets.chomp.to_i
-puts "nhap vao y"
-y = gets.chomp.to_i
+def nhap(ten)
+  print "Nhap vao gia tri #{ten} = "
+  x = gets.chomp.to_i
+end
+
 def mang(x)
   a = Array.new
   i = 0
@@ -12,14 +13,20 @@ def mang(x)
   end
   return a
 end
-a = mang(x).reverse
-puts " "
-c = Array.new
-for i in 0..(a.length - 1)
-  c[i] = a[i] * y
+
+def tich(x, y)
+  a = mang(x).reverse
+  puts " "
+  c = Array.new
+  for i in 0..(a.length - 1)
+    c[i] = a[i] * y
+  end
+  tich = 0
+  for i in 0..(c.length - 1)
+    tich = tich + c[i] *  10**(c.length - 1 - i)
+  end
+  tich
 end
-tich = 0
-for i in 0..(c.length - 1)
-  tich = tich + c[i] *  10**(c.length - 1 - i)
-end
-puts "tich cua 2 so la #{tich}"
+x = nhap("x")
+y = nhap("y")
+puts "tich cua 2 so la #{tich(x, y)}"

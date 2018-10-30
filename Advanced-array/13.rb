@@ -7,22 +7,34 @@ for i in 0..99
     break
   end
 end
+
+c = Array.new
+for i in 0..(a.length - 1)
+  c[i] = a[i]
+end
+for i in 0..(c.length - 1)
+  for j in (c.length - 1).downto(i + 1)
+    if c[i] == c[j]
+      c.delete_at(j)
+    end
+  end
+end
 puts "Nhap k"
 k = gets.chomp.to_i
-while k <=0 || k >= a.length do
-  puts "moi nhap lai k tu 1 toi #{a.length}"
+while k <= 0 || k > c.length do
+  puts "Moi nhap lai k tu 1 toi #{c.length}"
   k = gets.chomp.to_i
 end
-b = a.sort.reverse
+puts "Mang c dai #{c.length}"
+b = c.sort.reverse
 b.each{  |b| print "#{b} "}
 puts ""
-puts "gia tri lon thu #{k} la: #{b[k-1]}"
+puts "Gia tri lon thu #{k} la: #{b[k-1]}"
 d = Array.new
 for i in 0..(a.length - 1)
-  if a[i] == b[k-1]
+  if a[i] == b[k - 1]
     d << i
   end
 end
-puts "vi tri phan tu lon thu #{k} trong mang la: "
+puts "Vi tri phan tu lon thu #{k} trong mang la: "
 d.each{ |y| print "#{y} "}
-

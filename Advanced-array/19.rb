@@ -1,9 +1,13 @@
-puts "Nhap vap chieu cao h"
-h = gets.chomp.to_i
-while h < 1 || h > 20 do
-  puts "Nhap lai chieu cao tu 1 toi 20"
+def chieu_cao
+  puts "Nhap vap chieu cao h"
   h = gets.chomp.to_i
+  while h < 1 || h > 20 do
+    puts "Nhap lai chieu cao tu 1 toi 20"
+    h = gets.chomp.to_i
+  end
+  h
 end
+
 def giai_thua(x)
   giai_thua = 1
   if x == 0 
@@ -15,6 +19,7 @@ def giai_thua(x)
   end
   return giai_thua
 end
+
 def print_array(x)
   a = Array.new
   for i in 0..x
@@ -22,7 +27,13 @@ def print_array(x)
     print "#{a[i]} "
   end
 end
-for i in 0..h
-  print_array(i)
-  puts ""
+
+def tam_giac_pascal(h)
+  for i in 0..h
+    print_array(i)
+    puts ""
+  end
 end
+
+h = chieu_cao
+tam_giac_pascal(h)

@@ -1,24 +1,34 @@
-def max_min(a,b,c,d)
-  max = a
-  if max < b
-    max = b
-  end
-  if max < c
-    max = c
-  end
-  if max < d
-    max = d
-  end
-  puts "so lon nhat la: #{max}"
-  min = a
-  if min > b
-    min = b
-  end
-  if min > c
-    min = c
-  end
-  if min > d
-    min = d
-  end
-  puts " so nho nhat la: #{min}"
+def nhap(ten)
+  print "Nhap #{ten} = "
+  a = gets.chomp.to_f
+  a
 end
+
+def min(a, b)
+  min = a
+  min = b if b <= a
+  min
+end
+
+def max(a, b)
+  max = a
+  max = b if b >= a
+  max
+end
+
+def min_4(a, b, c, d)
+  min = min(min(min(a, b), c), d)
+  min
+end
+
+def max_4(a, b, c, d)
+  max = max(max(max(a, b), c), d)
+  max
+end
+
+a = nhap("a")
+b = nhap("b")
+c = nhap("c")
+d = nhap("d")
+puts "So nho nhat trong 4 so la: #{min_4(a, b, c, d)}"
+puts "So lon nhat trong 4 so la: #{max_4(a, b, c, d)}"

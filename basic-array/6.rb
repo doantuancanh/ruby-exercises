@@ -1,16 +1,28 @@
-a = Array.new
-for i in 0..99
-  puts "Nhap phan tu thu #{i}"
-  a[i] = gets.chomp.to_i
-  break if a[i] == -1
+def nhap(ten)
+	a = Array.new
+	for i in 0..99
+	  print "Nhap phan tu #{ten}\[#{i}\] = "
+	  a[i] = gets.chomp.to_i
+	  break if a[i] == -1
+	end
+	a
 end
-print "Nhap gia tri k = "
-k = gets.chomp.to_i
-until k >= 0 && k < a.length
-  puts "Gia tri nhap k hop le!"
-  puts "Moi nhap lai gia tri tu 0 toi #{a.length-1}"
-  k = gets.chomp.to_i
+
+def nhap_k(a)
+	print "Nhap k = "
+	k = gets.chomp.to_i
+	while (k < 0) || (k >= a.length) do
+		puts "Nhap khong dung! Nhap lai tu 0 toi #{a.length}"
+		print "k = "
+		k = gets.chomp.to_i
+	end
+	k
 end
-a.delete_at(k)
-puts "Cac gia tri cua mang: "
-a.each {|f| print "#{f} "}
+
+def xoa(k, a)
+	a.delete_at(k)
+end
+
+a = nhap("a")
+k = nhap_k(a)
+xoa(k, a)
