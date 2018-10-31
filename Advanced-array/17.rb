@@ -31,5 +31,4 @@ end
 
 a = nhap("a")
 k = nhap_k(a)
-puts "Mang xoay vong tai vi tri #{k}: #{xoay_vong(k,a)}"
-
+puts "Mang xoay vong tai vi tri #{k}: #{xoay_vong(k, a)}"

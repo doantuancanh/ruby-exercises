@@ -1,4 +1,9 @@
-def del(s1,s2)
+def nhap(ten)
+  puts "Nhap vao chuoi #{ten}:"
+  s = gets.chomp.to_s
+end
+
+def del(s1, s2)
   x = s2.split(" ")
   y = s1.split(" ")
   for i in 0..(x.length - 1)
@@ -9,10 +14,7 @@ def del(s1,s2)
     end
   end
   s1 = y.join(" ")
-  return s1
 end
-s1 = gets.chomp.to_s
-s2 = gets.chomp.to_s
-x = del(s1,s2)
-puts "#{x}"
-puts "#{s1.class}"
+s1 = nhap("s1")
+s2 = nhap("s2")
+puts "#{del(s1, s2)}"

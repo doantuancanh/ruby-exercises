@@ -1,3 +1,7 @@
+def nhap(ten)
+  puts "Nhap vao chuoi #{ten}:"
+  s = gets.chomp.to_s
+end
 def xoa_dau(s)
   while s[0] == " " do 
     s[0] = ""
@@ -14,9 +18,19 @@ def xoa_cuoi(s)
   end
 end
 
+def xoa_giua(s)
+  for i in 0..(s.length - 2)
+    while s[i] == " " && s[i+1] == " " do
+      s[i+1] = ""
+    end
+  end
+  s
+end
+
 def dem_tu(s)
   xoa_dau(s)
   xoa_cuoi(s)
+  xoa_giua(s)
   if s.empty?
     puts "Chuoi rong khong co tu"
     count = 0
@@ -27,11 +41,9 @@ def dem_tu(s)
         count = count + 1
       end
     end
-    puts "chuoi co #{count} tu"
   end
   count
 end
-puts "nhap vao chuoi:"
-s = gets.chomp.to_s
-dem_tu(s)
 
+s = nhap("s")
+puts "Chuoi co so tu la: #{dem_tu(s)}"

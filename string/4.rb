@@ -1,10 +1,18 @@
-puts "Nhap chuoi"
-s1 = gets.chomp.to_s
-count = 0
-for i in 0..(s1.length - 1)
-  if s1[i] == " "
-    count = count + 1
-  end
+def nhap(ten)
+  puts "Nhap chuoi #{ten}:"
+  s = gets.chomp.to_s
+  s
 end
-puts "#{s1}"
-puts "So ky tu trang trong chuoi la: #{count}"
+
+def dem_cach(s)
+  count = 0
+  for i in 0..(s.length - 1)
+	if s[i] == " "
+      count = count + 1
+    end
+  end
+  count
+end
+
+s = nhap("s")
+puts "So ky tu trang trong chuoi vua nhap la: #{dem_cach(s)}"

@@ -1,3 +1,8 @@
+def nhap(ten)
+  puts "Nhap vao chuoi #{ten}:"
+  s = gets.chomp.to_s
+end
+
 def xoa_dau(s)
   while s[0] == " " do 
     s[0] = ""
@@ -39,7 +44,5 @@ def chuan_hoa(s)
   end
   return s
 end
-puts "nhap ho ten"
-s = gets.chomp.to_s
+s = nhap("s")
 puts "#{chuan_hoa(s)}"
-
