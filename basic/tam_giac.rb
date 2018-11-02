@@ -27,6 +27,7 @@ end
 a = nhap("a")
 b = nhap("b")
 c = nhap("c")
+
 if check(a, b, c)
 	puts "Dien tich hinh tam giac co 3 canh a b c la: #{dien_tich(a, b, c)}"
 	puts "Chu vi hinh tam giac la: #{chu_vi(a, b, c)}"

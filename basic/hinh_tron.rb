@@ -18,5 +18,6 @@ end
 a = nhap_bk
 dt = dt_hinh_tron(a)
 cv = cv_hinh_tron(a)
+
 puts "Chu vi hinh tron co ban kinh #{a} la: #{cv}"
 puts "Dien tich hinh tron co ban kinh #{a} la: #{dt}"

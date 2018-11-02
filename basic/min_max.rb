@@ -30,5 +30,6 @@ a = nhap("a")
 b = nhap("b")
 c = nhap("c")
 d = nhap("d")
+
 puts "So nho nhat trong 4 so la: #{min_4(a, b, c, d)}"
 puts "So lon nhat trong 4 so la: #{max_4(a, b, c, d)}"

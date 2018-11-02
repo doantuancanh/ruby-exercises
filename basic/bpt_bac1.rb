@@ -6,4 +6,5 @@ def bpt_bac1(a,b)
     puts "Bat phuong trinh co nghiem x \> #{x}"
   end
 end
+
 bpt_bac1(3,5)
